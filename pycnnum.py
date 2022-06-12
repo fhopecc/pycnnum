@@ -376,7 +376,11 @@ class NumberingSystem:  # pylint: disable=too-few-public-methods
         self.math = MathSymbols(positive_cn, negative_cn, point_cn)
 
 
-SymbolType = ChineseNumberUnit | ChineseNumberDigit | ChineseMath
+from typing import Union
+
+SymbolType = Union[ChineseNumberUnit , ChineseNumberDigit , ChineseMath]
+# python 3.10
+# SymbolType = ChineseNumberUnit | ChineseNumberDigit | ChineseMath
 """Type hint for symbols: unit, digit and math
 """
 
